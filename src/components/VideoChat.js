@@ -1,6 +1,7 @@
 // This component will be the top level component for handling the data about the chat. 
 import React, { useState, useCallback } from 'react';
 import Lobby from './Lobby'
+import Room from './Room'
 
 // The username for the user that is joining the chat, a room name for the room they are going to connect to, and their access token-
 //-  once it has been fetched from the server,  will be stored in the componnet state using the useState() hook. 
@@ -51,11 +52,7 @@ const VideoChat = () => {
     let render;
     if (token) {
         render = (
-            <div>
-                <p>Username: {username}</p>
-                <p>Room name: {roomName}</p>
-                <p>Token: {token}</p>
-            </div>
+            <Room roomName={roomName} token={token} handleLogout={handleLogout} />
         );
     } else {
         render = (

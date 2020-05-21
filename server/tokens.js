@@ -4,9 +4,9 @@ const { ChatGrant, VideoGrant, VoiceGrant } = AccessToken;
 
 const generateToken = config => {
   return new AccessToken(
-    config.twilio.accountSid,
-    config.twilio.apiKey,
-    config.twilio.apiSecret
+    process.env.TWILIO_ACCOUNT_SID,// config.twilio.accountSid,
+    process.env.TWILIO_API_KEY,// config.twilio.apiKey,
+    process.env.TWILIO_API_SECRET// config.twilio.apiSecret
   );
 };
 
